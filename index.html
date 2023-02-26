@@ -16,7 +16,7 @@ title: Home
 <div class="blog-posts">
 	{% for post in site.posts %}
 		<div class="blog-post spacing">
-			<font size="-21"> href="{{ post.url }}">{{ post.title }}</font>
+			<font size="-21"><a href="{{ post.url }}">{{ post.title }}</a></font>
 		</div>
 	{% endfor %}
 </div>
