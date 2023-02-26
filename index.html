@@ -4,11 +4,26 @@ title: Home
 ---
 
 <div class="container">
-	<p class="post-hero center-text spacing">Bakery<strong>Store</strong> is known for our fresh bread, delicious cupcakes and chocolatey cookies.</p>
+	<p class="post-hero center-text spacing"> Repositório de podcasts transcritos do 45 Graus.</p>
 	<form action="/search.html" method="get">
 		<label for="search_box">Search</label>
 		<input type="text" id="search_box" name="query">
 		<input type="submit" value="search">
 	</form>
 
+</div>
+
+<div class="blog-posts">
+	{% for post in site.posts %}
+		<div class="blog-post spacing">
+			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p class="summary">
+				{{ post.category }}
+				<span class="date">
+					{{ post.date | date: '%B %d, %Y' }}
+				</span>
+			</p>
+			{{ post.excerpt }}
+		</div>
+	{% endfor %}
 </div>
